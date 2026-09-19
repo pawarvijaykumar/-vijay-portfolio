@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import "./App.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [state, handleSubmit] = useForm("xppwqwqk");
 
   const skills = [
     {
@@ -74,7 +76,9 @@ function App() {
   },
 ];
 
+
   return (
+    
     <div className="portfolio">
 
       {/* ================= NAVBAR ================= */}
@@ -531,28 +535,44 @@ function App() {
 
           <div className="contact-container">
 
-            <form>
+            <form onSubmit={handleSubmit}>
 
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
               />
+              
 
               <input
                 type="email"
+                 name="email"
                 placeholder="Your Email"
+                required
               />
 
               <textarea
-                placeholder="Your Message"
-                rows={6}
+              name="message"
+              placeholder="Your Message"
+              rows={6}
+              required
               />
 
-              <button type="submit">
-                Send Message ↗
+              <button type="submit" disabled={state.submitting}>
+                {state.submitting ? "Sending..." : "Send Message ↗"}
               </button>
 
             </form>
+            {state.succeeded && (
+              <p className="form-success">
+                  Message sent successfully! 🚀 I'll get back to you soon.
+              </p>
+            )}
+            <ValidationError
+              prefix="Form"
+             errors={state.errors}
+            />
 
             <div className="contact-info">
 
