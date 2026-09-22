@@ -121,8 +121,16 @@ function App() {
             Skills
           </a>
 
+
           <a href="#projects" onClick={() => setMenuOpen(false)}>
             Projects
+          </a>
+
+           <a href="#github" onClick={() => setMenuOpen(false)}>
+            GitHub
+            </a>
+          <a href="#resume" onClick={() => setMenuOpen(false)}>
+          Resume
           </a>
 
           <a href="#journey" onClick={() => setMenuOpen(false)}>
@@ -144,7 +152,10 @@ function App() {
       <main>
         <section id="home" className="hero-section">
           <div className="hero-content">
-            <p className="small-title">// WELCOME TO MY PORTFOLIO</p>
+            <div className="hero-badge">
+              <span className="status-dot"></span>
+              AVAILABLE FOR OPPORTUNITIES
+              </div>
 
             <h1>
               Hi Buddy! <span>👋</span>
@@ -152,8 +163,9 @@ function App() {
               I'm <strong>Vijay</strong>
             </h1>
 
-            <h2>Full Stack Web Developer</h2>
-
+            <h2 className="hero-role">
+              Full Stack Web Developer
+            </h2>
             <p className="education">
               Electronic &amp; Computer Engineering Student
             </p>
@@ -237,12 +249,28 @@ function App() {
 
           {/* PHOTO */}
 
-          <div className="hero-photo">
-            <div className="photo-glow">
-              <img src="/Vijay.png" alt="Vijay" />
-            </div>
+         
 
-            <div className="photo-signature">Vijay</div>
+          <div className="hero-photo-frame">
+
+           <div className="scan-line"></div>
+
+            <img src="/Vijay.png" alt="Vijay" />
+
+            <span className="corner corner-tl"></span>
+            <span className="corner corner-tr"></span>
+            <span className="corner corner-bl"></span>
+            <span className="corner corner-br"></span>
+
+           
+
+           <div className="tech-panel">
+            <span>LEARNING</span>
+             <strong>Agentic Ai</strong>
+             <strong>DSA</strong>
+            <strong>Node.js</strong>
+            <strong>MongoDB</strong>
+             </div>
           </div>
         </section>
 
@@ -341,45 +369,395 @@ function App() {
 
         {/* ================= PROJECTS ================= */}
 
-        <section id="projects" className="section">
-          <div className="section-heading">
-            <p className="small-title">// MY WORK</p>
+      {/* ================= PROJECTS ================= */}
 
-            <h2>
-              Featured <span>Projects</span>
-            </h2>
+<section id="projects" className="section projects-section">
 
-            <p>Some of the projects I've built and worked on.</p>
+  <div className="section-heading">
+    <p className="small-title">// MY PROJECTS</p>
+
+    <h2>
+      Featured <span>Projects</span>
+    </h2>
+
+    <p>
+      Projects I have built while learning and improving my development skills.
+    </p>
+  </div>
+
+
+  {/* ================= FEATURED PROJECT ================= */}
+
+  <div className="featured-project">
+
+    <div className="featured-image">
+      <img
+        src="/Instagram Clone.png"
+        alt="Instagram Clone"
+      />
+    </div>
+
+    <div className="featured-content">
+
+      <span className="featured-label">
+        ★ FEATURED PROJECT
+      </span>
+
+      <h3>
+        Instagram <span>Clone</span>
+      </h3>
+
+      <p>
+        A full-stack social media application built to practice
+        real-world frontend and backend development. It includes
+        user authentication, image handling, database integration
+        and modern web application features.
+      </p>
+
+      <div className="featured-tech">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>MongoDB</span>
+        <span>JWT</span>
+        <span>Cloudinary</span>
+      </div>
+
+      <div className="featured-buttons">
+
+        <a href="#contact">
+          Live Demo ↗
+        </a>
+
+        <a
+          href="https://github.com/pawarvijaykumar"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* ================= OTHER PROJECTS ================= */}
+
+  <div className="projects-grid">
+
+    {projects
+      .filter((project) => project.title !== "Instagram Clone")
+      .map((project) => (
+        <article
+          className="project-card"
+          key={project.title}
+        >
+
+          <div className="project-image">
+            <img
+              src={project.image}
+              alt={project.title}
+            />
           </div>
 
-          <div className="projects-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
+          <h3>{project.title}</h3>
 
-                <h3>{project.title}</h3>
+          <p>{project.description}</p>
 
-                <p>{project.description}</p>
+          <span className="project-tech">
+            {project.tech}
+          </span>
 
-                <span className="project-tech">{project.tech}</span>
+          <div className="project-buttons">
 
-                <div className="project-buttons">
-                  <a href={project.liveLink}>Live Demo ↗</a>
+            <a href={project.liveLink}>
+              Live Demo ↗
+            </a>
 
-                  <a
-                    href={project.sourceLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Source Code
-                  </a>
-                </div>
-              </article>
-            ))}
+            <a
+              href={project.sourceLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source Code
+            </a>
+
           </div>
-        </section>
+
+        </article>
+      ))}
+
+  </div>
+
+</section>
+
+
+{/* ================= WHAT I BUILD ================= */}
+
+<section
+  id="services"
+  className="section services-section"
+>
+
+  <div className="section-heading">
+
+    <p className="small-title">
+      // WHAT I DO
+    </p>
+
+    <h2>
+      What I <span>Build</span>
+    </h2>
+
+    <p>
+      I build modern, scalable and user-focused web applications
+      using current technologies.
+    </p>
+
+  </div>
+
+
+  <div className="services-grid">
+
+    <article className="service-card">
+
+      <div className="service-number">01</div>
+
+      <div className="service-icon">⌘</div>
+
+      <h3>Frontend Development</h3>
+
+      <p>
+        Building responsive and interactive user interfaces
+        using React, JavaScript, HTML, CSS and Tailwind CSS.
+      </p>
+
+      <div className="service-tech">
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>Tailwind</span>
+      </div>
+
+    </article>
+
+
+    <article className="service-card">
+
+      <div className="service-number">02</div>
+
+      <div className="service-icon">&lt;/&gt;</div>
+
+      <h3>Backend Development</h3>
+
+      <p>
+        Creating REST APIs and backend systems using Node.js,
+        Express.js and secure authentication.
+      </p>
+
+      <div className="service-tech">
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>REST API</span>
+      </div>
+
+    </article>
+
+
+    <article className="service-card">
+
+      <div className="service-number">03</div>
+
+      <div className="service-icon">◈</div>
+
+      <h3>Database &amp; APIs</h3>
+
+      <p>
+        Designing and connecting databases with applications
+        using MongoDB, Mongoose and MongoDB Atlas.
+      </p>
+
+      <div className="service-tech">
+        <span>MongoDB</span>
+        <span>Mongoose</span>
+        <span>Atlas</span>
+      </div>
+
+    </article>
+
+
+    <article className="service-card">
+
+      <div className="service-number">04</div>
+
+      <div className="service-icon">✦</div>
+
+      <h3>AI &amp; Modern Web</h3>
+
+      <p>
+        Exploring Generative AI, prompt engineering and AI tools
+        to create smarter and more useful web experiences.
+      </p>
+
+      <div className="service-tech">
+        <span>Gen AI</span>
+        <span>Prompting</span>
+        <span>AI Tools</span>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+{/* ================= GITHUB ================= */}
+
+<section id="github" className="section github-section">
+
+  <div className="section-heading">
+
+    <p className="small-title">// GITHUB ACTIVITY</p>
+
+    <h2>
+      Code. <span>Build. Repeat.</span>
+    </h2>
+
+    <p>
+      Explore my code, projects and development journey on GitHub.
+    </p>
+
+  </div>
+
+
+  <div className="github-card">
+
+    <div className="github-content">
+
+      <div className="github-icon">
+        GH
+      </div>
+
+      <div>
+        <span className="github-label">
+          DEVELOPER PROFILE
+        </span>
+
+        <h3>
+          Vijay Kumar
+        </h3>
+
+        <p>
+          Full Stack Web Developer • C++ • DSA • Generative AI
+        </p>
+      </div>
+
+    </div>
+
+
+    <div className="github-info">
+
+      <div>
+        <span>USERNAME</span>
+        <strong>pawarvijaykumar</strong>
+      </div>
+
+      <div>
+        <span>FOCUS</span>
+        <strong>Full Stack Development</strong>
+      </div>
+
+    </div>
+
+
+    <a
+      className="github-button"
+      href="https://github.com/pawarvijaykumar"
+      target="_blank"
+      rel="noreferrer"
+    >
+      View GitHub Profile ↗
+    </a>
+
+  </div>
+
+</section>
+
+
+
+{/* ================= RESUME ================= */}
+
+<section id="resume" className="section resume-section">
+
+  <div className="section-heading">
+
+    <p className="small-title">// MY RESUME</p>
+
+    <h2>
+      Let's <span>Work Together</span>
+    </h2>
+
+    <p>
+      Interested in working together? Check out my resume and
+      learn more about my skills, projects and experience.
+    </p>
+
+  </div>
+
+
+  <div className="resume-card">
+
+    <div className="resume-icon">
+      CV
+    </div>
+
+    <div className="resume-content">
+
+      <span className="resume-label">
+        AVAILABLE FOR OPPORTUNITIES
+      </span>
+
+      <h3>
+        Vijay Kumar
+      </h3>
+
+      <p>
+        Full Stack Web Developer • Electronic &amp; Computer Engineering
+      </p>
+
+    </div>
+
+
+    <div className="resume-buttons">
+
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="resume-view"
+      >
+        View Resume ↗
+      </a>
+
+      <a
+        href="/resume.pdf"
+        download
+        className="resume-download"
+      >
+        Download CV ↓
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 
         {/* ================= JOURNEY ================= */}
 
@@ -451,6 +829,8 @@ function App() {
             </div>
           </div>
         </section>
+
+        
 
         {/* ================= CONTACT ================= */}
 
@@ -652,4 +1032,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
