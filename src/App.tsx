@@ -494,6 +494,66 @@ function App() {
 
 </section>
 
+{/* ================= GITHUB ACTIVITY ================= */}
+
+<section id="github" className="section github-section">
+
+  <div className="section-heading">
+
+    <p className="small-title">// GITHUB ACTIVITY</p>
+
+    <h2>
+      Building <span>in Public</span>
+    </h2>
+
+    <p>
+      I learn by building, experimenting and sharing my work on GitHub.
+    </p>
+
+  </div>
+
+  <div className="github-card">
+
+    <div className="github-content">
+
+      <span className="github-label">
+        ● GITHUB PROFILE
+      </span>
+
+      <h3>pawarvijaykumar</h3>
+
+      <p>
+        Full Stack Web Development • C++ • DSA • Generative AI
+      </p>
+
+      <div className="github-tech">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>C++</span>
+        <span>DSA</span>
+      </div>
+
+      <a
+        href="https://github.com/pawarvijaykumar"
+        target="_blank"
+        rel="noreferrer"
+        className="github-btn"
+      >
+        View GitHub ↗
+      </a>
+
+    </div>
+
+    <div className="github-symbol">
+      <span>⌘</span>
+    </div>
+
+  </div>
+
+</section>
+
+
 
 {/* ================= WHAT I BUILD ================= */}
 
@@ -612,6 +672,10 @@ function App() {
   </div>
 
 </section>
+
+
+
+
 
 
 {/* ================= GITHUB ================= */}
@@ -748,6 +812,89 @@ function App() {
         className="resume-download"
       >
         Download CV ↓
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* ================= RESUME ================= */}
+
+<section id="resume" className="section resume-section">
+
+  <div className="section-heading">
+
+    <p className="small-title">// MY RESUME</p>
+
+    <h2>
+      Let's <span>Work Together</span>
+    </h2>
+
+    <p>
+      Explore my experience, technical skills, projects and
+      learning journey in my resume.
+    </p>
+
+  </div>
+
+  <div className="resume-card">
+
+    <div className="resume-info">
+
+      <span className="resume-number">
+        01
+      </span>
+
+      <div className="resume-icon">
+        📄
+      </div>
+
+      <h3>
+        Vijay Kumar
+      </h3>
+
+      <p className="resume-role">
+        Full Stack Web Developer
+      </p>
+
+      <p className="resume-description">
+        Electronic & Computer Engineering student focused on
+        full-stack development, backend technologies and
+        Data Structures & Algorithms with C++.
+      </p>
+
+      <div className="resume-tags">
+
+        <span>React</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>C++</span>
+        <span>DSA</span>
+
+      </div>
+
+    </div>
+
+    <div className="resume-actions">
+
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="resume-view-btn"
+      >
+        View Resume ↗
+      </a>
+
+      <a
+        href="/resume.pdf"
+        download="Vijay_Kumar_Resume.pdf"
+        className="resume-download-btn"
+      >
+        Download Resume ↓
       </a>
 
     </div>
@@ -1015,19 +1162,89 @@ function App() {
 
       {/* ================= FOOTER ================= */}
 
-      <footer>
-        <div>
-          <h3>
-            VIJAY<span>.DEV</span>
-          </h3>
+      {/* ================= FOOTER ================= */}
 
-          <p>Engineer • Developer • Learner</p>
-        </div>
+<footer className="site-footer">
 
-        <p>Thank you for visiting ❤️</p>
+  <div className="footer-main">
 
-        <a href="#home">Back to top ↑</a>
-      </footer>
+    <div className="footer-brand">
+
+      <h3>
+        VIJAY<span>.DEV</span>
+      </h3>
+
+      <p>
+        Full Stack Web Developer
+      </p>
+
+      <span>
+        Engineer • Developer • Learner
+      </span>
+
+    </div>
+
+
+    <div className="footer-links">
+
+      <p>// QUICK LINKS</p>
+
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <div className="footer-connect">
+
+      <p>// CONNECT</p>
+
+      <a
+        href="https://github.com/pawarvijaykumar"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub ↗
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/vijaykumar-pawar-943a64409"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn ↗
+      </a>
+
+      <a href="mailto:pawarvijaykumar821@gmail.com">
+        Email ↗
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div className="footer-bottom">
+
+    <span>
+      © 2026 Vijay Kumar
+    </span>
+
+    <span>
+      Built with React + Vite
+    </span>
+
+    <a href="#home">
+      BACK TO TOP ↑
+    </a>
+
+  </div>
+
+</footer>
     </div>
   );
 }
