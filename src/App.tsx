@@ -129,7 +129,12 @@ function App() {
            <a href="#github" onClick={() => setMenuOpen(false)}>
             GitHub
             </a>
-          <a href="#resume" onClick={() => setMenuOpen(false)}>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setMenuOpen(false)}
+          >
           Resume
           </a>
 

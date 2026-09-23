@@ -4055,3 +4055,163 @@ textarea {
   }
 
 }
+
+/* =========================================
+   FINAL MOBILE RESPONSIVE
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root,
+  .portfolio {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+    padding: 14px 18px;
+    box-sizing: border-box;
+  }
+
+  /* HERO SECTION */
+  .hero-section {
+    width: 100%;
+    min-width: 0;
+    padding: 60px 18px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* HERO CONTAINER */
+  .hero-container {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    gap: 40px !important;
+  }
+
+  /* HERO CONTENT */
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    text-align: center !important;
+
+    order: 1 !important;
+  }
+
+  /* PHOTO CONTAINER */
+  .hero-photo {
+    position: static !important;
+
+    width: 100% !important;
+    max-width: 330px !important;
+    min-width: 0 !important;
+
+    margin: 0 auto !important;
+
+    display: block !important;
+
+    order: 2 !important;
+  }
+
+  /* PHOTO FRAME */
+  .hero-photo-frame {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 330px !important;
+
+    height: 420px !important;
+
+    margin: 0 auto !important;
+
+    overflow: hidden !important;
+
+    border-radius: 24px !important;
+  }
+
+  /* PHOTO */
+  .hero-photo-frame img {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    display: block !important;
+  }
+
+  /* LEARNING PANEL */
+  .tech-panel {
+    position: absolute !important;
+
+    right: 10px !important;
+    top: 35% !important;
+
+    z-index: 5 !important;
+  }
+
+  /* ALL SECTIONS */
+  .section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* PROJECTS */
+  .featured-project,
+  .projects-grid,
+  .services-grid,
+  .skills-grid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+ 
