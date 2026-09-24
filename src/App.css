@@ -4057,7 +4057,7 @@ textarea {
 }
 
 /* =========================================
-   FINAL MOBILE RESPONSIVE
+   FINAL MOBILE FIX
    iPhone 12 Pro - 390px
 ========================================= */
 
@@ -4086,7 +4086,7 @@ textarea {
     box-sizing: border-box;
   }
 
-  /* HERO SECTION */
+  /* HERO */
   .hero-section {
     width: 100%;
     min-width: 0;
@@ -4095,30 +4095,90 @@ textarea {
     overflow: hidden;
   }
 
-  /* HERO CONTAINER */
+  /* =========================================
+   DESKTOP HERO LAYOUT
+========================================= */
+
+.hero-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-content {
+  width: 100%;
+  text-align: left;
+}
+
+.hero-photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+
+/* =========================================
+   MOBILE HERO
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* HERO */
+
+  .hero-section {
+    width: 100%;
+    min-width: 0;
+    padding: 60px 18px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
   .hero-container {
     width: 100% !important;
     max-width: 100% !important;
 
     display: flex !important;
     flex-direction: column !important;
-
     align-items: center !important;
 
     gap: 40px !important;
   }
 
-  /* HERO CONTENT */
   .hero-content {
     width: 100% !important;
     max-width: 100% !important;
-
     text-align: center !important;
-
-    order: 1 !important;
   }
 
-  /* PHOTO CONTAINER */
+
+  /* PHOTO */
+
   .hero-photo {
     position: static !important;
 
@@ -4133,7 +4193,6 @@ textarea {
     order: 2 !important;
   }
 
-  /* PHOTO FRAME */
   .hero-photo-frame {
     position: relative !important;
 
@@ -4149,7 +4208,6 @@ textarea {
     border-radius: 24px !important;
   }
 
-  /* PHOTO */
   .hero-photo-frame img {
     position: relative !important;
 
@@ -4162,7 +4220,9 @@ textarea {
     display: block !important;
   }
 
+
   /* LEARNING PANEL */
+
   .tech-panel {
     position: absolute !important;
 
@@ -4172,7 +4232,9 @@ textarea {
     z-index: 5 !important;
   }
 
+
   /* ALL SECTIONS */
+
   .section {
     width: 100%;
     max-width: 100%;
@@ -4182,7 +4244,9 @@ textarea {
     padding-right: 20px;
   }
 
-  /* PROJECTS */
+
+  /* PROJECTS / SKILLS / SERVICES */
+
   .featured-project,
   .projects-grid,
   .services-grid,
@@ -4208,10 +4272,582 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+
   /* FOOTER */
+
   .site-footer {
     width: 100%;
     box-sizing: border-box;
   }
+
 }
- 
+
+/* =========================================
+   MOBILE NAVBAR
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    position: relative;
+    width: 100%;
+    height: 72px;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  /* LOGO */
+
+  .navbar .logo {
+    font-size: 22px;
+    white-space: nowrap;
+    z-index: 1002;
+  }
+
+  /* HAMBURGER */
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+    margin-right: 10px;
+
+    border: 1px solid rgba(0, 217, 255, 0.45);
+    border-radius: 8px;
+
+    background: rgba(0, 217, 255, 0.05);
+    color: #00d9ff;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 1002;
+  }
+
+  .menu-button:hover {
+    background: rgba(0, 217, 255, 0.12);
+    border-color: #00d9ff;
+  }
+/* =========================================
+   FINAL MOBILE NAVBAR FIX
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .menu-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2002;
+  }
+
+  /* CLOSED MENU */
+  .nav-links {
+    position: absolute !important;
+
+    top: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    display: none !important;
+    flex-direction: column !important;
+
+    padding: 8px 16px 18px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(0, 217, 255, 0.08),
+        transparent 55%
+      ),
+      #020f17 !important;
+
+    border-top: 1px solid rgba(0, 217, 255, 0.25);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(0, 217, 255, 0.04);
+
+    z-index: 2000;
+  }
+
+  /* =========================================
+   PROFESSIONAL CYBER MOBILE MENU
+========================================= */
+
+@media (max-width: 600px) {
+
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: none !important;
+    flex-direction: column !important;
+
+    padding: 10px 12px 14px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 217, 255, 0.06),
+        rgba(2, 15, 23, 0.98) 35%
+      ),
+      #020f17 !important;
+
+    border-top: 1px solid rgba(0, 217, 255, 0.25);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+      0 18px 35px rgba(0, 0, 0, 0.55),
+      0 0 30px rgba(0, 217, 255, 0.05);
+
+    z-index: 2000;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    position: relative;
+
+    width: 100% !important;
+    box-sizing: border-box;
+
+    padding: 13px 18px !important;
+    margin: 2px 0;
+
+    color: #9bb0bd;
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    text-align: left;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .nav-links a::before {
+    content: "";
+
+    position: absolute;
+    left: 7px;
+    top: 50%;
+
+    width: 3px;
+    height: 0;
+
+    background: #00d9ff;
+    border-radius: 5px;
+
+    transform: translateY(-50%);
+
+    transition: height 0.25s ease;
+  }
+
+  .nav-links a:hover {
+    color: #00d9ff;
+    background: rgba(0, 217, 255, 0.06);
+    border-color: rgba(0, 217, 255, 0.18);
+    transform: translateX(4px);
+  }
+
+  .nav-links a:hover::before {
+    height: 18px;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* =========================================
+   FINAL MOBILE NAVBAR POLISH
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* Hide desktop Let's Talk button */
+  .navbar > .talk-btn {
+    display: none !important;
+  }
+
+  /* Mobile menu */
+  .nav-links {
+    height: auto !important;
+    min-height: 0 !important;
+
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+
+    gap: 2px !important;
+
+    padding: 8px 12px 12px !important;
+  }
+
+  /* Compact professional links */
+  .nav-links a {
+    height: auto !important;
+    min-height: 46px !important;
+
+    padding: 12px 18px !important;
+    margin: 1px 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    text-align: left !important;
+
+    box-sizing: border-box !important;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .nav-links {
+    gap: 0 !important;
+    padding: 8px 14px 12px !important;
+  }
+
+  .nav-links a {
+    min-height: 0 !important;
+    padding: 11px 16px !important;
+    margin: 0 !important;
+
+    font-size: 14px !important;
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.07);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* =========================================
+   MOBILE HERO PHOTO - FINAL
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero-section {
+    overflow-x: hidden !important;
+  }
+
+  .hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* PHOTO CONTAINER */
+
+  .hero-photo {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    margin: 20px auto 0 !important;
+    order: 2 !important;
+  }
+
+  .hero-photo-frame {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 320px !important;
+
+    height: 400px !important;
+
+    margin: 0 auto !important;
+
+    overflow: hidden !important;
+
+    border-radius: 22px !important;
+  }
+
+  .hero-photo-frame img {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    display: block !important;
+  }
+
+  /* LEARNING PANEL */
+
+  .tech-panel {
+    position: absolute !important;
+
+    right: 10px !important;
+    top: 45% !important;
+
+    z-index: 20 !important;
+
+    max-width: 120px !important;
+  }
+}
+
+/* =========================================
+   FINAL MOBILE HERO
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* HERO SECTION */
+  .hero-section {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 60px 18px 50px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* HERO CONTAINER */
+  .hero-container {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    gap: 40px !important;
+  }
+
+  /* HERO TEXT */
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    text-align: center !important;
+  }
+
+  /* =========================================
+     PHOTO WRAPPER
+  ========================================= */
+
+  .hero-photo {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+
+    margin: 0 auto !important;
+
+    display: block !important;
+
+    order: 2 !important;
+  }
+
+  /* PHOTO FRAME */
+  .hero-photo-frame {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 320px !important;
+
+    height: 400px !important;
+
+    margin: 0 auto !important;
+
+    overflow: hidden !important;
+
+    border-radius: 22px !important;
+  }
+
+  /* PHOTO */
+  .hero-photo-frame img {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* SCANNER */
+  .hero-photo-frame .scan-line {
+    position: absolute !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    z-index: 10 !important;
+  }
+
+  /* CORNER MARKS */
+  .hero-photo-frame .corner {
+    z-index: 11 !important;
+  }
+
+  /* =========================================
+     LEARNING PANEL
+  ========================================= */
+
+  .tech-panel {
+    position: absolute !important;
+
+    right: 10px !important;
+    top: 42% !important;
+
+    z-index: 20 !important;
+
+    max-width: 115px !important;
+  }
+}
+
+
+/* =========================================
+   MOBILE ABOUT SECTION
+   iPhone 12 Pro - 390px
+========================================= */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    width: 100% !important;
+    padding: 70px 18px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* ABOUT HEADING */
+
+  .about-section .section-heading {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .about-section .section-heading h2 {
+    font-size: 32px !important;
+  }
+
+  /* ABOUT CONTENT */
+
+  .about-content {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 30px !important;
+    margin-top: 35px !important;
+  }
+
+  /* ABOUT TEXT */
+
+  .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-text p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* ABOUT CARD */
+
+  .about-card {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 14px !important;
+  }
+
+  .about-card > div {
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 15px !important;
+
+    padding: 16px !important;
+  }
+
+  .about-card > div > span {
+    flex-shrink: 0 !important;
+    font-size: 24px !important;
+  }
+
+  .about-card strong {
+    font-size: 14px !important;
+  }
+
+  .about-card p {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin-top: 4px !important;
+  }
+}

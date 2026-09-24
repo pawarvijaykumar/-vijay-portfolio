@@ -152,133 +152,145 @@ function App() {
         </a>
       </header>
 
-      {/* ================= HOME ================= */}
+      
+{/* ================= HOME ================= */}
 
-      <main>
-        <section id="home" className="hero-section">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <span className="status-dot"></span>
-              AVAILABLE FOR OPPORTUNITIES
-              </div>
+<main>
+  <section id="home" className="hero-section">
 
-            <h1>
-              Hi Buddy! <span>👋</span>
-              <br />
-              I'm <strong>Vijay</strong>
-            </h1>
+    <div className="hero-container">
 
-            <h2 className="hero-role">
-              Full Stack Web Developer
-            </h2>
-            <p className="education">
-              Electronic &amp; Computer Engineering Student
-            </p>
+      {/* ================= HERO CONTENT ================= */}
 
-            <p className="description">
-              I build real-world web applications, explore new technologies
-              and solve problems through code.
-            </p>
+      <div className="hero-content">
 
+        <div className="hero-badge">
+          <span className="status-dot"></span>
+          AVAILABLE FOR OPPORTUNITIES
+        </div>
 
+        <h1>
+          Hi Buddy! <span>👋</span>
+          <br />
+          I'm <strong>Vijay</strong>
+        </h1>
 
+        <h2 className="hero-role">
+          Full Stack Web Developer
+        </h2>
 
+        <p className="education">
+          Electronic &amp; Computer Engineering Student
+        </p>
 
+        <p className="description">
+          I build real-world web applications, explore new technologies
+          and solve problems through code.
+        </p>
 
+        {/* BUTTONS */}
 
+        <div className="hero-buttons">
 
+          <button
+            className="voice-btn"
+            onClick={playVoice}
+          >
+            🔊 Meet Vijay
+          </button>
 
+          <a href="#projects">
+            View My Work ↓
+          </a>
 
-<div className="hero-buttons">
+        </div>
 
-  <button
-    className="voice-btn"
-    onClick={playVoice}
-  >
-    🔊 Meet Vijay
-  </button>
+        {/* STATS */}
 
-  <a href="#projects">
-    View My Work ↓
-  </a>
+        <div className="stats">
 
-</div>
-
-
-
-
-
-            <div className="stats">
-              <div>
-                <strong>20+</strong>
-                <span>Technologies</span>
-              </div>
-
-              <div>
-                <strong>5+</strong>
-                <span>Projects</span>
-              </div>
-
-              <div>
-                <strong>∞</strong>
-                <span>Learning Always</span>
-              </div>
-            </div>
-
-            <div className="social-links">
-              <a
-                href="https://github.com/pawarvijaykumar"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/vijaykumar-pawar-943a64409"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=wuulwbj"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-              </a>
-            </div>
+          <div>
+            <strong>20+</strong>
+            <span>Technologies</span>
           </div>
 
-          {/* PHOTO */}
+          <div>
+            <strong>5+</strong>
+            <span>Projects</span>
+          </div>
 
-         
+          <div>
+            <strong>∞</strong>
+            <span>Learning Always</span>
+          </div>
 
-          <div className="hero-photo-frame">
+        </div>
 
-           <div className="scan-line"></div>
+        {/* SOCIAL LINKS */}
 
-            <img src="/Vijay.png" alt="Vijay" />
+        <div className="social-links">
 
-            <span className="corner corner-tl"></span>
-            <span className="corner corner-tr"></span>
-            <span className="corner corner-bl"></span>
-            <span className="corner corner-br"></span>
+          <a
+            href="https://github.com/pawarvijaykumar"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
 
-           
+          <a
+            href="https://www.linkedin.com/in/vijaykumar-pawar-943a64409"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
 
-           <div className="tech-panel">
+          <a
+            href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=wuulwbj"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+      {/* ================= PHOTO ================= */}
+
+      <div className="hero-photo">
+
+        <div className="hero-photo-frame">
+
+          <div className="scan-line"></div>
+
+          <img
+            src="/Vijay.png"
+            alt="Vijay"
+          />
+
+          <span className="corner corner-tl"></span>
+          <span className="corner corner-tr"></span>
+          <span className="corner corner-bl"></span>
+          <span className="corner corner-br"></span>
+
+          <div className="tech-panel">
             <span>LEARNING</span>
-             <strong>Agentic Ai</strong>
-             <strong>DSA</strong>
+            <strong>Agentic AI</strong>
+            <strong>DSA</strong>
             <strong>Node.js</strong>
             <strong>MongoDB</strong>
-             </div>
           </div>
-        </section>
 
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
         {/* ================= ABOUT ================= */}
 
         <section id="about" className="section about-section">
@@ -372,7 +384,7 @@ function App() {
           </div>
         </section>
 
-        {/* ================= PROJECTS ================= */}
+       
 
       {/* ================= PROJECTS ================= */}
 
