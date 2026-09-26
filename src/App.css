@@ -2258,7 +2258,6 @@ textarea {
   }
 
 }
-
 /* ================= GITHUB ACTIVITY ================= */
 
 .github-section {
@@ -2268,13 +2267,16 @@ textarea {
 
 .github-card {
   max-width: 1000px;
+  min-height: 260px;
   margin: 45px auto 0;
-  padding: 32px;
+  padding: 40px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
+
+  box-sizing: border-box;
 
   border: 1px solid rgba(0, 217, 255, 0.25);
   border-radius: 18px;
@@ -2283,10 +2285,10 @@ textarea {
     linear-gradient(
       135deg,
       rgba(0, 217, 255, 0.06),
-      rgba(0, 10, 18, 0.8)
+      rgba(1, 10, 16, 0.9)
     );
 
-  box-shadow: 0 0 35px rgba(0, 217, 255, 0.04);
+  box-shadow: 0 0 35px rgba(0, 217, 255, 0.05);
 
   transition:
     transform 0.35s ease,
@@ -2296,155 +2298,294 @@ textarea {
 
 .github-card:hover {
   transform: translateY(-6px);
-
-  border-color: rgba(0, 217, 255, 0.7);
+  border-color: rgba(0, 217, 255, 0.65);
 
   box-shadow:
-    0 0 25px rgba(0, 217, 255, 0.12),
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 0 30px rgba(0, 217, 255, 0.12),
+    0 20px 50px rgba(0, 0, 0, 0.25);
 }
+
+
+/* ================= GITHUB CONTENT ================= */
 
 .github-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  flex: 1;
+  min-width: 0;
 }
 
-.github-icon {
-  width: 65px;
-  height: 65px;
+.github-label {
+  color: #00d9ff;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.github-content h3 {
+  margin: 15px 0 8px;
+
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.github-content > p {
+  margin: 0 0 20px;
+
+  color: #8298aa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ================= TECHNOLOGIES ================= */
+
+.github-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 25px;
+}
+
+.github-tech span {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 6px;
+
+  background: rgba(0, 217, 255, 0.03);
+
+  color: #8298aa;
+  font-size: 10px;
+
+  transition: 0.25s ease;
+}
+
+.github-tech span:hover {
+  color: #00d9ff;
+  border-color: #00d9ff;
+  transform: translateY(-2px);
+}
+
+
+/* ================= GITHUB BUTTON ================= */
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  border: 1px solid #00d9ff;
+  border-radius: 8px;
+
+  background: #00d9ff;
+  color: #021017;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.github-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+
+/* ================= GITHUB SYMBOL ================= */
+
+.github-symbol {
+  width: 150px;
+  height: 150px;
+
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(0, 217, 255, 0.45);
-  border-radius: 14px;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 50%;
 
-  background: rgba(0, 217, 255, 0.06);
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 217, 255, 0.08),
+      transparent 65%
+    );
+
+  box-shadow:
+    0 0 35px rgba(0, 217, 255, 0.08);
+}
+
+.github-symbol span {
+  width: 85px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(0, 217, 255, 0.04);
 
   color: #00d9ff;
 
   font-family: monospace;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
-
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.08);
-}
-
-.github-label {
-  color: #00d9ff;
-
-  font-family: monospace;
-
-  font-size: 10px;
-
   letter-spacing: 2px;
+
+  text-shadow: 0 0 18px rgba(0, 217, 255, 0.5);
+
+  box-shadow:
+    0 0 25px rgba(0, 217, 255, 0.12);
 }
 
-.github-content h3 {
-  margin: 6px 0;
 
-  font-size: 22px;
+/* ================= TABLET ================= */
 
-  color: #ffffff;
-}
+@media (max-width: 850px) {
 
-.github-content p {
-  margin: 0;
+  .github-card {
+    gap: 30px;
+  }
 
-  color: #8298aa;
+  .github-symbol {
+    width: 120px;
+    height: 120px;
+  }
 
-  font-size: 13px;
-}
-
-.github-info {
-  display: flex;
-  gap: 35px;
-}
-
-.github-info div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.github-info span {
-  color: #607888;
-
-  font-family: monospace;
-
-  font-size: 9px;
-
-  letter-spacing: 1.5px;
-}
-
-.github-info strong {
-  color: #a9bfcc;
-
-  font-size: 12px;
-}
-
-.github-button {
-  padding: 12px 18px;
-
-  border: 1px solid rgba(0, 217, 255, 0.4);
-  border-radius: 8px;
-
-  background: rgba(0, 217, 255, 0.05);
-
-  color: #00d9ff;
-
-  font-size: 12px;
-  font-weight: 600;
-
-  transition: 0.3s ease;
-}
-
-.github-button:hover {
-  background: #00d9ff;
-
-  color: #021017;
-
-  border-color: #00d9ff;
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
+  .github-symbol span {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 850px) {
-
-  .github-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .github-info {
-    width: 100%;
-  }
-
-}
-
 @media (max-width: 600px) {
 
-  .github-content {
-    align-items: flex-start;
-  }
+  .github-card {
+    width: calc(100% - 30px);
+    max-width: 100%;
 
-  .github-info {
+    min-height: auto;
+
+    margin: 35px auto 0;
+
+    padding: 25px 20px;
+
+    display: flex;
     flex-direction: column;
-    gap: 15px;
+
+    align-items: stretch;
+
+    gap: 28px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
   }
 
-  .github-button {
+
+  .github-content {
     width: 100%;
-    text-align: center;
+    min-width: 0;
+
+    display: block;
   }
 
+
+  .github-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+  }
+
+
+  .github-content h3 {
+    width: 100%;
+
+    margin: 8px 0 12px;
+
+    font-size: 23px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+  }
+
+
+  .github-content > p {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+
+  .github-tech {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .github-tech span {
+    flex: 0 0 auto;
+
+    padding: 6px 9px;
+
+    font-size: 9px;
+  }
+
+
+  .github-btn {
+    display: inline-flex;
+
+    width: fit-content;
+
+    padding: 11px 16px;
+
+    box-sizing: border-box;
+  }
+
+
+  .github-symbol {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto;
+
+    flex-shrink: 0;
+  }
+
+
+  .github-symbol span {
+    width: 60px;
+    height: 60px;
+
+    font-size: 18px;
+  }
 }
 
 
@@ -4570,85 +4711,48 @@ textarea {
 }
 
 /* =========================================
-   MOBILE HERO PHOTO - FINAL
+   FINAL MOBILE PHOTO
+   iPhone 12 Pro - 390px
 ========================================= */
 
 @media (max-width: 600px) {
 
-  .hero-section {
-    overflow-x: hidden !important;
-  }
-
-  .hero-container {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    align-items: center !important;
-  }
-
-  .hero-content {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* PHOTO CONTAINER */
-
   .hero-photo {
-    position: relative !important;
     width: 100% !important;
-    max-width: 320px !important;
-    min-width: 0 !important;
-    margin: 20px auto 0 !important;
+    max-width: 330px !important;
+    margin: 30px auto 0 !important;
+    display: block !important;
     order: 2 !important;
   }
 
   .hero-photo-frame {
-    position: relative !important;
-
-    width: 100% !important;
-    max-width: 320px !important;
-
-    height: 400px !important;
-
+    width: 330px !important;
+    height: 420px !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
 
+    position: relative !important;
     overflow: hidden !important;
-
-    border-radius: 22px !important;
+    border-radius: 24px !important;
   }
 
   .hero-photo-frame img {
-    position: relative !important;
-
     width: 100% !important;
     height: 100% !important;
 
+    display: block !important;
+
     object-fit: cover !important;
     object-position: center top !important;
-
-    display: block !important;
   }
-
-  /* LEARNING PANEL */
 
   .tech-panel {
     position: absolute !important;
-
     right: 10px !important;
-    top: 45% !important;
-
+    top: 42% !important;
     z-index: 20 !important;
-
-    max-width: 120px !important;
   }
 }
-
-/* =========================================
-   FINAL MOBILE HERO
-   iPhone 12 Pro - 390px
-========================================= */
-
 @media (max-width: 600px) {
 
   /* HERO SECTION */
@@ -4848,6 +4952,399 @@ textarea {
   .about-card p {
     font-size: 12px !important;
     line-height: 1.5 !important;
+    margin-top: 4px !important;
+  }
+}
+
+
+/* =========================================
+   RESUME SECTION
+========================================= */
+
+.resume-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-card {
+  max-width: 1000px;
+  margin: 45px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 50px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(0, 217, 255, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.04),
+      rgba(0, 10, 18, 0.9)
+    );
+
+  box-shadow:
+    0 0 35px rgba(0, 217, 255, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 217, 255, 0.65);
+
+  box-shadow:
+    0 0 25px rgba(0, 217, 255, 0.12),
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* LEFT SIDE */
+
+.resume-info {
+  position: relative;
+}
+
+.resume-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  color: #00d9ff;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.resume-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 12px;
+
+  background: rgba(0, 217, 255, 0.05);
+
+  font-size: 25px;
+
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.08);
+}
+
+.resume-info h3 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.resume-role {
+  margin-bottom: 15px;
+
+  color: #00d9ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.resume-description {
+  max-width: 650px;
+
+  margin-bottom: 20px;
+
+  color: #8298aa;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* TAGS */
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resume-tags span {
+  padding: 7px 11px;
+
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 6px;
+
+  background: rgba(0, 217, 255, 0.03);
+
+  color: #8fa7b7;
+
+  font-size: 10px;
+
+  transition: 0.25s ease;
+}
+
+.resume-tags span:hover {
+  color: #00d9ff;
+  border-color: #00d9ff;
+
+  transform: translateY(-2px);
+}
+
+
+/* BUTTONS */
+
+.resume-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  min-width: 180px;
+}
+
+.resume-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 18px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.resume-view-btn {
+  background: #00d9ff;
+  color: #021017;
+
+  border: 1px solid #00d9ff;
+}
+
+.resume-view-btn:hover {
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.resume-download-btn {
+  background: transparent;
+  color: #9db2c0;
+
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.resume-download-btn:hover {
+  color: #00d9ff;
+  border-color: #00d9ff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE RESUME
+========================================= */
+
+@media (max-width: 600px) {
+
+  .resume-card {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 25px 20px;
+
+    margin-top: 30px;
+  }
+
+  .resume-number {
+    right: 0;
+  }
+
+  .resume-info h3 {
+    font-size: 24px;
+  }
+
+  .resume-description {
+    font-size: 12px;
+  }
+
+  .resume-actions {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .resume-actions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================================
+   FINAL MOBILE FOOTER
+========================================= */
+
+@media (max-width: 600px) {
+
+  .site-footer {
+    padding: 35px 15px 25px !important;
+    overflow: hidden !important;
+  }
+
+  .footer-main {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 18px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .footer-main > * {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* ================= FOOTER CARDS ================= */
+
+  .footer-card {
+    width: 100% !important;
+
+    padding: 22px 20px !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 14px !important;
+  }
+
+
+  /* ================= BRAND ================= */
+
+  .footer-brand {
+    min-height: auto !important;
+    height: auto !important;
+
+    padding: 22px 20px !important;
+  }
+
+  .footer-brand h3 {
+    margin: 0 0 8px !important;
+    font-size: 27px !important;
+  }
+
+  .footer-brand p {
+    margin: 0 !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* ================= QUICK LINKS ================= */
+
+  .footer-links {
+    min-height: auto !important;
+    height: auto !important;
+
+    padding: 22px 20px !important;
+  }
+
+  .footer-links h4 {
+    margin-bottom: 18px !important;
+  }
+
+  .footer-links a {
+    display: block !important;
+
+    width: fit-content !important;
+
+    margin: 0 0 13px !important;
+
+    padding: 0 !important;
+  }
+
+  .footer-links a:last-child {
+    margin-bottom: 0 !important;
+  }
+
+
+  /* ================= CONNECT ================= */
+
+  .footer-connect {
+    min-height: auto !important;
+    height: auto !important;
+
+    padding: 22px 20px !important;
+  }
+
+  .footer-connect h4 {
+    margin-bottom: 18px !important;
+  }
+
+  .footer-connect a {
+    display: block !important;
+
+    width: 135px !important;
+
+    box-sizing: border-box !important;
+
+    margin-bottom: 9px !important;
+
+    padding: 11px 13px !important;
+  }
+
+  .footer-connect a:last-child {
+    margin-bottom: 0 !important;
+  }
+
+
+  /* ================= FOOTER BOTTOM ================= */
+
+  .footer-bottom {
+    width: 100% !important;
+
+    margin-top: 10px !important;
+    padding-top: 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+
+    gap: 12px !important;
+     box-sizing: border-box !important;
+  }
+
+  .footer-bottom p {
+    margin: 0 !important;
+  }
+
+  .footer-bottom a {
     margin-top: 4px !important;
   }
 }
