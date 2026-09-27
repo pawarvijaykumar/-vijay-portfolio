@@ -54,6 +54,13 @@ function App() {
 
   const projects = [
     {
+      title: "Backend REST API with MongoDB Atlas",
+      description:
+        "A Node.js and Express backend connected to MongoDB Atlas using Mongoose, built to practice database modeling, REST API design, and cloud database integration.",
+      tech: "Node.js • Express • MongoDB Atlas",
+      sourceLink: "https://github.com/pawarvijaykumar",
+    },
+    {
       title: "Instagram Clone",
       image: "/Instagram Clone.png",
       description:
@@ -409,8 +416,8 @@ function App() {
 
     <div className="featured-image">
       <img
-        src="/Instagram Clone.png"
-        alt="Instagram Clone"
+        src="/wallpaper-gallery-screenshot.png"
+        alt="Wallpaper Gallery App"
       />
     </div>
 
@@ -421,33 +428,36 @@ function App() {
       </span>
 
       <h3>
-        Instagram <span>Clone</span>
+        Wallpaper <span>Gallery App</span>
       </h3>
 
       <p>
-        A full-stack social media application built to practice
-        real-world frontend and backend development. It includes
-        user authentication, image handling, database integration
-        and modern web application features.
+        A full-stack wallpaper gallery web app with a Node.js/Express backend.
+        Fetches and serves wallpapers via the Picsum Photos API with category
+        filtering, and includes real image search powered by the Pexels API.
+        Users can browse, view full-size, and download wallpapers directly.
       </p>
 
       <div className="featured-tech">
-        <span>React</span>
         <span>Node.js</span>
         <span>Express.js</span>
-        <span>MongoDB</span>
-        <span>JWT</span>
-        <span>Cloudinary</span>
+        <span>Pexels API</span>
+        <span>REST API</span>
+        <span>dotenv</span>
       </div>
 
       <div className="featured-buttons">
 
-        <a href="#contact">
+        <a
+          href="https://wallpaper-gallery-n6tl.onrender.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           Live Demo ↗
         </a>
 
         <a
-          href="https://github.com/pawarvijaykumar"
+          href="https://github.com/pawarvijaykumar/wallpaper-gallery"
           target="_blank"
           rel="noreferrer"
         >
@@ -465,47 +475,57 @@ function App() {
 
   <div className="projects-grid">
 
-    {projects
-      .filter((project) => project.title !== "Instagram Clone")
-      .map((project) => (
-        <article
-          className="project-card"
-          key={project.title}
-        >
+    {projects.map((project) => (
+      <article
+        className="project-card"
+        key={project.title}
+      >
 
-          <div className="project-image">
+        <div className={`project-image ${!project.image ? "placeholder-image" : ""}`}>
+          {project.image ? (
             <img
               src={project.image}
               alt={project.title}
             />
-          </div>
+          ) : (
+            <div className="placeholder-content">
+              <span className="placeholder-icon">⚡</span>
+              <span className="placeholder-title">{project.title}</span>
+            </div>
+          )}
+        </div>
 
-          <h3>{project.title}</h3>
+        <h3>{project.title}</h3>
 
-          <p>{project.description}</p>
+        <p>{project.description}</p>
 
-          <span className="project-tech">
-            {project.tech}
-          </span>
+        <span className="project-tech">
+          {project.tech}
+        </span>
 
-          <div className="project-buttons">
-
-            <a href={project.liveLink}>
+        <div className="project-buttons">
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target={project.liveLink.startsWith("http") ? "_blank" : undefined}
+              rel={project.liveLink.startsWith("http") ? "noreferrer" : undefined}
+            >
               Live Demo ↗
             </a>
+          )}
 
-            <a
-              href={project.sourceLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Source Code
-            </a>
+          <a
+            href={project.sourceLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
 
-          </div>
+        </div>
 
-        </article>
-      ))}
+      </article>
+    ))}
 
   </div>
 
@@ -695,147 +715,7 @@ function App() {
 
 
 
-{/* ================= GITHUB ================= */}
 
-<section id="github" className="section github-section">
-
-  <div className="section-heading">
-
-    <p className="small-title">// GITHUB ACTIVITY</p>
-
-    <h2>
-      Code. <span>Build. Repeat.</span>
-    </h2>
-
-    <p>
-      Explore my code, projects and development journey on GitHub.
-    </p>
-
-  </div>
-
-
-  <div className="github-card">
-
-    <div className="github-content">
-
-      <div className="github-icon">
-        GH
-      </div>
-
-      <div>
-        <span className="github-label">
-          DEVELOPER PROFILE
-        </span>
-
-        <h3>
-          Vijay Kumar
-        </h3>
-
-        <p>
-          Full Stack Web Developer • C++ • DSA • Generative AI
-        </p>
-      </div>
-
-    </div>
-
-
-    <div className="github-info">
-
-      <div>
-        <span>USERNAME</span>
-        <strong>pawarvijaykumar</strong>
-      </div>
-
-      <div>
-        <span>FOCUS</span>
-        <strong>Full Stack Development</strong>
-      </div>
-
-    </div>
-
-
-    <a
-      className="github-button"
-      href="https://github.com/pawarvijaykumar"
-      target="_blank"
-      rel="noreferrer"
-    >
-      View GitHub Profile ↗
-    </a>
-
-  </div>
-
-</section>
-
-
-
-{/* ================= RESUME ================= */}
-
-<section id="resume" className="section resume-section">
-
-  <div className="section-heading">
-
-    <p className="small-title">// MY RESUME</p>
-
-    <h2>
-      Let's <span>Work Together</span>
-    </h2>
-
-    <p>
-      Interested in working together? Check out my resume and
-      learn more about my skills, projects and experience.
-    </p>
-
-  </div>
-
-
-  <div className="resume-card">
-
-    <div className="resume-icon">
-      CV
-    </div>
-
-    <div className="resume-content">
-
-      <span className="resume-label">
-        AVAILABLE FOR OPPORTUNITIES
-      </span>
-
-      <h3>
-        Vijay Kumar
-      </h3>
-
-      <p>
-        Full Stack Web Developer • Electronic &amp; Computer Engineering
-      </p>
-
-    </div>
-
-
-    <div className="resume-buttons">
-
-      <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noreferrer"
-        className="resume-view"
-      >
-        View Resume ↗
-      </a>
-
-      <a
-        href="/resume.pdf"
-        download
-        className="resume-download"
-      >
-        Download CV ↓
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
 
 
 {/* ================= RESUME ================= */}
