@@ -17,36 +17,55 @@ function App() {
   });
 };
 
-  const skills = [
+  const coreSkills = [
     {
+      num: "01",
+      icon: "</>",
       title: "Programming",
       items: ["C", "C++", "Python", "JavaScript"],
     },
     {
+      num: "02",
+      icon: "⌘",
       title: "Frontend",
       items: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
     },
     {
+      num: "03",
+      icon: "⇄",
       title: "Backend",
       items: ["Node.js", "Express.js", "REST API"],
     },
     {
+      num: "04",
+      icon: "◈",
       title: "Database",
       items: ["MongoDB", "Mongoose", "MongoDB Atlas"],
     },
+  ];
+
+  const secondarySkills = [
     {
+      num: "05",
+      icon: "⌬",
       title: "Authentication",
       items: ["JWT", "bcrypt", "Appwrite", "Cloudinary"],
     },
     {
+      num: "06",
+      icon: "✦",
       title: "Generative AI",
-      items: ["Generative AI", "Prompt Engineering", "AI Tools"],
+      items: ["Agentic AI", "Prompt Engineering", "AI Tools"],
     },
     {
+      num: "07",
+      icon: "⚙",
       title: "Tools",
       items: ["Git", "GitHub", "VS Code", "Postman"],
     },
     {
+      num: "08",
+      icon: "⬡",
       title: "DSA",
       items: ["Arrays", "Linked List", "Stack", "Queue", "Trees", "Graphs"],
     },
@@ -309,63 +328,58 @@ function App() {
             </h2>
           </div>
 
-          <div className="about-content">
-            <div className="about-text">
-              <p>
-                I'm Vijay, an Electronic &amp; Computer Engineering student
-                and Full Stack Web Developer.
-              </p>
+          <div className="about-v2">
+  <div className="about-v2-text">
+  <span className="about-v2-label">// WHO I AM</span>
 
-              <p>
-                I enjoy building web applications, learning new technologies
-                and solving real-world problems through code.
-              </p>
+  <p className="about-v2-lead">
+    I'm Vijay, an Electronic &amp; Computer Engineering student and
+    aspiring <span className="hl">Full Stack Developer</span> based in
+    India. I like turning ideas into working web applications, from the
+    interface users see to the backend that powers it.
+  </p>
 
-              <p>
-                Currently, I'm improving my development skills, working on
-                projects and learning Generative AI.
-              </p>
-            </div>
+  <p>
+    I've built and deployed projects like a Wallpaper Gallery app with a{" "}
+    <span className="hl">Node.js/Express</span> backend, category
+    filtering and live image search using the Pexels API. I've also
+    worked with <span className="hl">MongoDB Atlas</span> and Mongoose to
+    build REST APIs.
+  </p>
 
-            <div className="about-card">
-              <div>
-                <span>🎓</span>
-                <div>
-                  <strong>Education</strong>
-                  <p>Electronic &amp; Computer Engineering</p>
-                </div>
-              </div>
-
-              <div>
-                <span>💻</span>
-                <div>
-                  <strong>Developer</strong>
-                  <p>Full Stack Web Developer</p>
-                </div>
-              </div>
-
-              <div>
-                <span>🚀</span>
-                <div>
-                  <strong>Passion</strong>
-                  <p>Web Development • DSA • AI</p>
-                </div>
-              </div>
-
-              <div>
-                <span>🎯</span>
-                <div>
-                  <strong>Goal</strong>
-                  <p>Build useful real-world solutions</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="about-v2-now">
+    <span>// CURRENTLY</span>
+    <p>
+      Right now I'm strengthening my fundamentals with{" "}
+      <span className="hl">DSA in C++</span>, exploring{" "}
+      <span className="hl">Generative AI</span> and agentic development
+      tools, and building more projects to grow as a developer.
+    </p>
+  </div>
+</div>
+  <div className="about-v2-card">
+    {[
+      { icon: "◈", title: "Education", text: "Electronic & Computer Engineering" },
+      { icon: "</>", title: "Developer", text: "Full Stack Web Developer" },
+      { icon: "✦", title: "Passion", text: "Web Development • DSA • AI" },
+      { icon: "◎", title: "Goal", text: "Build useful real-world solutions" },
+    ].map((item, i) => (
+      <div className="about-v2-item" key={item.title}>
+        <span className="about-v2-icon">{item.icon}</span>
+        <div className="about-v2-body">
+          <strong>{item.title}</strong>
+          <p>{item.text}</p>
+        </div>
+        <span className="about-v2-num">{String(i + 1).padStart(2, "0")}</span>
+      </div>
+    ))}
+  </div>
+</div>
         </section>
 
         {/* ================= SKILLS ================= */}
 
-        <section id="skills" className="section">
+        <section id="skills" className="section skills-section">
           <div className="section-heading">
             <p className="small-title">// MY SKILLS</p>
 
@@ -376,18 +390,54 @@ function App() {
             <p>Technologies I work with and continue learning.</p>
           </div>
 
-          <div className="skills-grid">
-            {skills.map((skill) => (
-              <div className="skill-card" key={skill.title}>
-                <h3>{skill.title}</h3>
+          <div className="skills-container">
+            {/* TIER 1: CORE STACK */}
+            <div className="skills-tier">
+              <div className="skills-tier-label">// CORE STACK</div>
 
-                <div className="skill-items">
-                  {skill.items.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
+              <div className="skills-grid">
+                {coreSkills.map((skill) => (
+                  <div className="skill-card skill-card-core" key={skill.title}>
+                    <div className="skill-card-header">
+                      <div className="skill-icon">{skill.icon}</div>
+                      <span className="skill-number">{skill.num}</span>
+                    </div>
+
+                    <h3>{skill.title}</h3>
+
+                    <div className="skill-items">
+                      {skill.items.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* TIER 2: TOOLS & LEARNING */}
+            <div className="skills-tier">
+              <div className="skills-tier-label">// TOOLS &amp; LEARNING</div>
+
+              <div className="skills-grid">
+                {secondarySkills.map((skill) => (
+                  <div className="skill-card skill-card-secondary" key={skill.title}>
+                    <div className="skill-card-header">
+                      <div className="skill-icon">{skill.icon}</div>
+                      <span className="skill-number">{skill.num}</span>
+                    </div>
+
+                    <h3>{skill.title}</h3>
+
+                    <div className="skill-items">
+                      {skill.items.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -414,11 +464,11 @@ function App() {
 
   <div className="featured-project">
 
-    <div className="featured-image">
-      <img
-        src="/wallpaper-gallery-screenshot.png"
-        alt="Wallpaper Gallery App"
-      />
+    <div className="featured-image placeholder-image">
+      <div className="placeholder-content">
+        <span className="placeholder-icon">🖼️</span>
+        <span className="placeholder-title">Wallpaper Gallery App</span>
+      </div>
     </div>
 
     <div className="featured-content">
